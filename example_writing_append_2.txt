@@ -1,5 +1,0 @@
-Hello World!
-This is a new line.
-This is another new line.
-This is the last line.
-Hello Again in append mode!
