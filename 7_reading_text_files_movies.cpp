@@ -5,7 +5,7 @@
 #include "libs/Movie.h"
 #include "libs/MovieList.h"
 #include "libs/TextFileHandler.h"
-#include "libs/LineList.h"
+#include "libs/List.h"
 
 using namespace std;
 
@@ -18,14 +18,14 @@ void printMovie(Movie movie){
     cout << "Title: " << movie.title << endl;
 }
 
-void printLines (LineList lines) {
+void printLines (List<string> lines) {
     for (int i = 0; i < lines.size; i++){
         cout << lines.get(i) << endl;
     }
 }
 
-MovieList moviesWithratingGreaterThan(MovieList movies, double rating) {
-    MovieList newList;
+List<Movie> moviesWithratingGreaterThan(List<Movie> movies, double rating) {
+    List<Movie> newList;
 
     for (int i = 0; i < movies.size; i++) {
         if (movies.get(i).rating > rating) {
@@ -44,11 +44,11 @@ int main(){
 
     TextFileHandler readFileHandler(inputFileName);
 
-    LineList lines = readFileHandler.readLines();
+    List<string> lines = readFileHandler.readLines();
 
     printLines(lines);
 
-    MovieList movies = getMoviesFromLines(lines, delimiter);
+    List<Movie> movies = getMoviesFromLines(lines, delimiter);
 
     for (int i = 0; i < movies.size; i++){
         printMovie(movies.get(i));
@@ -58,8 +58,8 @@ int main(){
     string outputFileName = "output.txt";
     TextFileHandler writeFileHandler(outputFileName);
 
-    MovieList moviesWithRatingGreaterThan80 = moviesWithratingGreaterThan(movies, 80);    
-    LineList linesToWrite = getLinesFromMovies(moviesWithRatingGreaterThan80, '#');
+    List<Movie> moviesWithRatingGreaterThan80 = moviesWithratingGreaterThan(movies, 80);    
+    List<string> linesToWrite = getLinesFromMovies(moviesWithRatingGreaterThan80, '#');
     linesToWrite.add("Total: " + to_string(moviesWithRatingGreaterThan80.size) + " movies.");
     linesToWrite.add("Average rating: " + to_string(getAverageRating(moviesWithRatingGreaterThan80)));
     printLines(linesToWrite);
