@@ -11,8 +11,6 @@
 *.o
 *.obj
 
-libs/Movie.h
-libs/MovieList.h
 libs/TextFileHandler.h
 
 1_reading_text_files
