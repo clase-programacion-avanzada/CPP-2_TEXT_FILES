@@ -7,6 +7,7 @@
 #include <fstream>
 //Include the string library.
 #include <string>
+#include "libs/List.h"
 using namespace std; 
 
 
@@ -36,10 +37,16 @@ int main(){
     //We use the getline() function to read the file line by line.
     //istream& getline (istream&  is, string& str, char delim);
     // we can use it inside a while loop because it returns true if the line was read correctly.
+    List<string> lines;
     while (getline(fileStream, line)) {
+        lines.add(line);
         cout<<line<<endl;
     }
     fileStream.close();
+
+    //We could even read the file and store it in a list of strings.
+    //We can use the getline() function inside a while loop because it returns true if the line was read correctly.
+
 
 
     return 0;

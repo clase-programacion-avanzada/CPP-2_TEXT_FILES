@@ -5,6 +5,7 @@
 //to read and write files.
 
 #include <fstream>
+#include "libs/List.h"
 
 using namespace std; 
 
@@ -39,6 +40,31 @@ int main(){
     //We must be sure that we close the file when we are done writing to it.
     file.close();
 
+    //We can also use the write() function but writing a list of strings.
+    string fileNameList = "example_writing_list.txt";
+
+    file.open(fileNameList, ios::out);//We open the file in write mode.
+
+    if(file.fail()){
+        cerr<<"Error opening file"<<endl;
+        exit(1);
+    }
+
+    //We can also use the write() function but writing a list of strings.
+
+    List<string> lines;
+
+    lines.add("Hello World!");
+    lines.add("This is a new line.");
+    lines.add("This is another new line.");
+    lines.add("This is the last line.");
+
+    for(int i = 0; i < lines.size; i++) {
+        if(i != 0) {
+            file<<endl;
+        }
+        file<<lines.get(i);
+    }
 
     return 0;
 }
