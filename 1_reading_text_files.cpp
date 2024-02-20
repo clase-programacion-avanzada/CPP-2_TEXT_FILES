@@ -8,12 +8,13 @@
 //Include the string library.
 #include <string>
 #include "libs/List.h"
+
 using namespace std; 
 
 
 int main(){
 
-    string sfileName = "example_reading.txt";
+    string fileName = "example_reading.txt";
     //We create a file stream object.
     // a file stream object is an object that will help us to read and write files.
     // ifstream is the class that will help us to read files.
@@ -21,14 +22,14 @@ int main(){
     // fstream is the class that will help us to read and write files.
     // In general a stream is a sequence of data elements made available over time.
     // In this case the data elements are the characters of the file.
-    fstream fileStream;
+    fstream file;
 
     //We open the file.
     //We use the open() function from the file stream object.
-    fileStream.open(sfileName, ios::in);//We open the file in read mode.
+    file.open(fileName, ios::in);//We open the file in read mode.
     
     //We check if the file was opened correctly.
-    if (fileStream.fail()) {
+    if (file.fail()) {
         cerr << "Error opening file" << endl;
         exit(1);
     }
@@ -38,11 +39,11 @@ int main(){
     //istream& getline (istream&  is, string& str, char delim);
     // we can use it inside a while loop because it returns true if the line was read correctly.
     List<string> lines;
-    while (getline(fileStream, line)) {
+    while (getline(file, line)) {
         lines.add(line);
         cout<<line<<endl;
     }
-    fileStream.close();
+    file.close();
 
     //We could even read the file and store it in a list of strings.
     //We can use the getline() function inside a while loop because it returns true if the line was read correctly.

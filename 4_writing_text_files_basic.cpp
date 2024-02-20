@@ -65,6 +65,8 @@ int main(){
         }
         file<<lines.get(i);
     }
+    
+    file.close();
 
     return 0;
 }
