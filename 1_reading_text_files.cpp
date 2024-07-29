@@ -41,6 +41,7 @@ int main(){
     List<string> lines;
     while (getline(file, line)) {
         lines.add(line);
+
         cout<<line<<endl;
     }
     file.close();

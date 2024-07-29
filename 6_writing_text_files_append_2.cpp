@@ -14,7 +14,7 @@ int main(){
     string fileName = "example_writing_append_2.txt";
     fstream file;
     
-    file.open(fileName, ios::out);//We open the file in write mode.
+    file.open(fileName, ios::out | ios::app);//We open the file in write mode.
     
     if(file.fail()){
         cerr<<"Error opening file"<<endl;

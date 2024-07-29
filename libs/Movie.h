@@ -57,7 +57,25 @@ Movie getMovieFromLine (string line, char delimiter) {
     aux_movie.title = word;
 
     return aux_movie;*/
-    
+
+    //1;1994;90;The Shawshank Redemption
+    //2;1972;90;The Godfather
+
+    //Voy a guardar en List<string> todas las líneas
+    //Recorrer la lista y separar por el delimitador
+
+    //int id = 1;
+    //int year = 1994;
+    //int rating = 90;
+    //string title = "The Shawshank Redemption";
+
+    //Movie movie;
+
+    //movie.id = id;
+    //movie.year = year;
+    //movie.rating = rating;
+    //movie.title = title;
+
     List<string> words = split(line, delimiter);
 
     Movie aux_movie;
@@ -66,7 +84,6 @@ Movie getMovieFromLine (string line, char delimiter) {
     aux_movie.rating = stoi(words.get(2));
     aux_movie.title = words.get(3);
     
-
     return aux_movie;
 
 }
