@@ -21,12 +21,14 @@ libs/TextFileHandler.h
 5_writing_text_files_append_1
 6_writing_text_files_append_2
 7_reading_text_files_movies
+Ejemplo_clase
 
 example_writing_list.txt
 output.txt
 example_writing.txt
 example_writing_append_1.txt
 example_writing_append_2.txt
+report.txt
 # Precompiled Headers
 *.gch
 *.pch
