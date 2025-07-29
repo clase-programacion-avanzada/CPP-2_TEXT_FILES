@@ -1,11 +1,11 @@
-//In this file we will see how to read files.
+/*
+ * En este archivo veremos cómo leer archivos.
+ * De manera similar a iostream (input stream y output stream), 
+ * fstream (file stream) se utiliza para leer y escribir archivos.
+ */
 #include <iostream> 
-// In a similar way as 
-//iostream (input stream and output stream), fstream (file stream) is used
-//to read and write files.
-
 #include <fstream>
-//Include the string library.
+// Incluir la librería string.
 #include <string>
 #include <sstream>
 
@@ -13,20 +13,19 @@ using namespace std;
 
 int main(){
 
-    string fileName = "example_reading_with_spaces.txt";
-    //string fileName = "example_reading.txt";
+    const char* fileName = "example_reading_with_spaces.txt";
     fstream file;
 
 
-    file.open(fileName, ios::in);//We open the file in read mode.
+    file.open(fileName, ios::in); // Abrimos el archivo en modo lectura.
     
     if (file.fail()) {
         cerr << "Error opening file" << endl;
         exit(1);
     }
 
-    string line;
-        
+    char line[256];
+
     while (!file.eof()) {
         file >> line;
         cout << line << endl; 

@@ -16,11 +16,10 @@ libs/TextFileHandler.h
 
 1_reading_text_files
 2_reading_text_files_alternative
-3_reading_text_files_movies
-4_writing_text_files_basic
-5_writing_text_files_append_1
-6_writing_text_files_append_2
-7_reading_text_files_movies
+3_writing_text_files_basic
+4_writing_text_files_append_1
+5_writing_text_files_append_2
+6_movies_example
 Ejemplo_clase
 
 example_writing_list.txt
@@ -102,8 +101,6 @@ Temporary Items
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
