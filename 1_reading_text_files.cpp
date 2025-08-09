@@ -39,7 +39,7 @@ int main(){
     }
 
     char line[256];
-    
+    // getline(file, line); <- con strings
     while (file.getline(line, 256)) {
         cout << line << endl;
     }

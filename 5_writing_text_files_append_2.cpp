@@ -22,7 +22,6 @@ int main(){
     }
 
     /*
-     * El proceso de escribir en un archivo se hace usando la función write().
      * El enfoque es muy similar a escribir en la consola.
      * En la consola, usamos el operador << (i.e cout << "Hello World!"),
      * con archivos, reemplazamos cout con file.

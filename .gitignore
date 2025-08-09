@@ -142,4 +142,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+movies_report_sorted.txt
+movies_report.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/c++,windows,macos,linux,visualstudiocode

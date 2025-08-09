@@ -15,8 +15,4 @@ struct Lines {
     }
 };
 
-struct TextFileHandler {
-
-};
-
 #endif /* MYHEADER_H */

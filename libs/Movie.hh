@@ -11,21 +11,13 @@ struct Movie{
     int id;
     int year;
     int rating;
-    char title[256];
+    char title[50];
 
     Movie() {
         id = 0;
         year = 0;
         rating = 0;
-        strncpy(title, "", 256);
-    }
-
-    bool equals(Movie other) {
-        return id == other.id
-            && year == other.year
-            && rating == other.rating
-            && strncmp(title, other.title, 256) == 0;
-
+        strncpy(title, "", 50);
     }
 
     bool operator==(const Movie& other) const {
@@ -36,11 +28,15 @@ struct Movie{
     }
 };
 
-Movie getMovieFromLine (string line, char delimiter) {
+Movie getMovieFromTokens (char tokens[4][50]) {
     
 
     Movie aux_movie;
-   
+    
+    aux_movie.id = atoi(tokens[0]);
+    aux_movie.year = atoi(tokens[1]);
+    aux_movie.rating = atoi(tokens[2]);
+    strncpy(aux_movie.title, tokens[3], 50);
     
     return aux_movie;
 
